@@ -60,39 +60,7 @@ public class ClienteServicio {
     // lista todos los clientes de la base de datos
     public void listarClientes() {
         baseDeDatos.listarClientes();
-    }
-
-    // Otros métodos se implementarán más adelante
-
-    /*
-     * explicacion de porque de dejo el comentario arriba
-     * 
-     * Ese comentario indica que en el futuro se agregarán más métodos a la clase
-     * ClienteServicio.java para implementar otras funcionalidades relacionadas con
-     * los clientes.
-     * 
-     * Por ejemplo, podríamos agregar métodos para:
-     * Ordenar clientes por diferentes criterios (nombre, saldo, etc.).
-     * Filtrar clientes por diferentes criterios (saldo mayor a cierta cantidad,
-     * etc.).
-     */
-
+    }    
 }
 
-/*
- * ClienteServicio.java: EXPLICACION DEL ARCHIVO
- * 
- * ClienteServicio es la capa de lógica de negocio que utiliza BaseDeDatos para
- * realizar operaciones con los clientes.
- * 
- * Implementa los servicios relacionados con los clientes.
- * 
- * Utiliza la clase BaseDeDatos para acceder y modificar los datos de los
- * clientes.
- * 
- * Contiene la lógica de negocio específica para las operaciones con clientes.
- * 
- * Por ejemplo, el método modificarCliente() en ClienteServicio podría validar
- * los datos del cliente antes de llamar al método modificarCliente() de
- * BaseDeDatos.
- */
+
