@@ -40,16 +40,16 @@ public class MenuPrincipal {
             scanner.nextLine(); // Consumir el salto de línea
 
             switch (opcion) {
-                case 1:
+                //case 1:
                     // Llamar al menú de consultar clientes
-                    MenuConsultar menuConsultar = new MenuConsultar(clienteServicio);
-                    menuConsultar.mostrarMenu();
-                    break;
-                case 2:
+                    //MenuConsultar menuConsultar = new MenuConsultar(clienteServicio);
+                    //menuConsultar.mostrarMenu();
+                    //break;
+                //case 2:
                     // Llamar al menú de ordenar clientes
-                    MenuOrdenar menuOrdenar = new MenuOrdenar(clienteServicio);
-                    menuOrdenar.mostrarMenu();
-                    break;
+                    //MenuOrdenar menuOrdenar = new MenuOrdenar(clienteServicio);
+                    //menuOrdenar.mostrarMenu();
+                    //break;
                 case 3:
                     // Llamar al menú de eliminar cliente
                     MenuEliminar menuEliminar = new MenuEliminar(clienteServicio);

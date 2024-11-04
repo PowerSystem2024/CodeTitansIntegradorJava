@@ -2,6 +2,8 @@ package servicios;
 
 import models.Cliente;
 
+import java.util.ArrayList;
+
 //Clase que implemente los servicios relacionados con los clientes.
 
 public class ClienteServicio {
@@ -60,7 +62,12 @@ public class ClienteServicio {
     // lista todos los clientes de la base de datos
     public void listarClientes() {
         baseDeDatos.listarClientes();
-    }    
+    }
+
+    // Retorna la lista de clientes
+    public ArrayList<Cliente> getLista() {
+        return baseDeDatos.getListaClientes(); // Devolvemos la lista de clientes
+    }
 }
 
 
