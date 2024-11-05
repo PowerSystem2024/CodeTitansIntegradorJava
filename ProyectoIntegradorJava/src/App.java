@@ -1,4 +1,3 @@
-
 /*
  * Clase principal de la aplicación
  * donde se inicializa la base de datos y se muestra el menú principal
