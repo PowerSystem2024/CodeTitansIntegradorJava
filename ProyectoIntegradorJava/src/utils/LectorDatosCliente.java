@@ -1,5 +1,8 @@
 package utils;
 
+import models.Cliente;
+import servicios.ClienteServicio;
+
 import java.util.Scanner;
 
 public class LectorDatosCliente {
@@ -7,21 +10,37 @@ public class LectorDatosCliente {
     private static final Scanner scanner = new Scanner(System.in);
 
     // Métodos para leer los datos del cliente (con validaciones)
-    public static int leerDocumento() {
+    public static int leerDocumento(ClienteServicio clienteServicio) {
         int dni;
         do {
             System.out.print("Ingrese el documento: ");
             while (!scanner.hasNextInt()) {
                 System.out.println("Error: Ingrese un número válido para el documento.");
                 scanner.next(); // Consumir la entrada inválida
+                System.out.println("Ingrese el documento: ");
             }
             dni = scanner.nextInt();
             scanner.nextLine();
 
-            if (Validaciones.documentoDuplicado(dni)) {
+            if (Validaciones.documentoDuplicado(clienteServicio, dni)) {
                 System.out.println("Error: El documento ya existe. Ingrese otro documento.");
             }
-        } while (Validaciones.documentoDuplicado(dni));
+        } while (Validaciones.documentoDuplicado(clienteServicio, dni));
+        return dni;
+    }
+
+    // Métodos para leer los datos del cliente (con validaciones)
+    public static int leerDocumentoModificar() {
+        int dni;
+
+        System.out.print("Ingrese el documento: ");
+        while (!scanner.hasNextInt()) {
+            System.out.println("Error: Ingrese un número válido para el documento.");
+            scanner.next(); // Consumir la entrada inválida
+        }
+        dni = scanner.nextInt();
+        scanner.nextLine();
+
         return dni;
     }
 
@@ -144,18 +163,19 @@ public class LectorDatosCliente {
     public static boolean leerEstado() { // Método para leer el estado del cliente (activo o inactivo)
 
         boolean activo;
-        do {
+        while (true) {
             System.out.print("¿El cliente está activo? (s/n): ");
             String respuesta = scanner.nextLine().toLowerCase();
             if (respuesta.equals("s")) {
                 activo = true;
+                break;
             } else if (respuesta.equals("n")) {
                 activo = false;
+                break;
             } else {
                 System.out.println("Error: Ingrese 's' para activo o 'n' para inactivo.");
-                activo = false; // Para que el bucle continúe
             }
-        } while (!activo && !scanner.nextLine().toLowerCase().equals("n"));
+        }
         return activo;
     }
 
@@ -173,6 +193,7 @@ public class LectorDatosCliente {
     public static int leerOpcion() { // Método para leer la opción del usuario
         return scanner.nextInt();
     }
+
 
     public static void esperarEnter() { // Método para esperar a que el usuario presione Enter para continuar
         System.out.println("\nPresione Enter para continuar...");

@@ -54,7 +54,7 @@ public class MenuModificar {
      */
     private void modificarDatosPrincipales() {
         System.out.print("Ingrese el DNI del cliente a modificar: ");
-        int dni = LectorDatosCliente.leerDocumento();
+        int dni = LectorDatosCliente.leerDocumentoModificar();
 
         Cliente cliente = clienteServicio.buscarCliente(dni);
 
@@ -111,7 +111,7 @@ public class MenuModificar {
      */
     private void modificarTodosLosDatos() {
         System.out.print("Ingrese el DNI del cliente a modificar: ");
-        int dni = LectorDatosCliente.leerDocumento(); // Leer el DNI del cliente a modificar
+        int dni = LectorDatosCliente.leerDocumentoModificar(); // Leer el DNI del cliente a modificar
 
         Cliente cliente = clienteServicio.buscarCliente(dni); // Buscar el cliente en la base de datos
 

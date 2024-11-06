@@ -22,8 +22,8 @@ public class OrdenamientoServicio {
      * Ordena la lista de clientes por el atributo especificado y en el orden
      * especificado.
      */
-    public void ordenarClientes(String atributo, String orden) {
-        ArrayList<Cliente> listaClientes = baseDeDatos.getListaClientes(); // Obtiene la lista de clientes
+    public void ordenarClientes(String atributo, String orden, ClienteServicio clienteServicio) {
+        ArrayList<Cliente> listaClientes = clienteServicio.getLista();; // Obtiene la lista de clientes
 
         Collections.sort(listaClientes, new Comparator<Cliente>() {
             @Override // Sobrescribe el método compare de la interfaz Comparator

@@ -2,6 +2,8 @@ package utils;
 
 import models.Cliente;
 import servicios.BaseDeDatos;
+import servicios.ClienteServicio;
+
 import java.util.ArrayList; // Importa la clase ArrayList para trabajar con listas
 import java.util.regex.Pattern; // Importa la clase Pattern para usar expresiones regulares
 import java.util.regex.Matcher; // Importa la clase Matcher para usar expresiones regulares
@@ -13,9 +15,8 @@ import java.time.format.DateTimeParseException; // Importa la clase DateTimePars
 public class Validaciones {
 
     // Verifica si un documento ya existe en la base de datos.
-    public static boolean documentoDuplicado(int dni) {
-        BaseDeDatos baseDeDatos = new BaseDeDatos(); // Accede a la base de datos
-        ArrayList<Cliente> listaClientes = baseDeDatos.getListaClientes();
+    public static boolean documentoDuplicado(ClienteServicio clienteServicio, int dni) {
+        ArrayList<Cliente> listaClientes = clienteServicio.getLista();
 
         for (Cliente cliente : listaClientes) {
             if (cliente.getDni() == dni) {
@@ -24,6 +25,7 @@ public class Validaciones {
         }
         return false; // El documento no existe
     }
+
 
     // Verifica si un nombre es válido (solo letras)
     public static boolean nombreValido(String nombre) {

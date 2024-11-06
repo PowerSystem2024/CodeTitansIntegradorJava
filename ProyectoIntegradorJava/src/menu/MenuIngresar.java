@@ -22,7 +22,7 @@ public class MenuIngresar {
         System.out.println("\n--- Ingresar Nuevo Cliente ---");
 
         // llama a la clase lectorDatosCliente y usa los metodos para "leer"
-        int dni = LectorDatosCliente.leerDocumento();
+        int dni = LectorDatosCliente.leerDocumento(clienteServicio);
         String nombre = LectorDatosCliente.leerNombre();
         String apellido = LectorDatosCliente.leerApellido();
         String email = LectorDatosCliente.leerEmail();

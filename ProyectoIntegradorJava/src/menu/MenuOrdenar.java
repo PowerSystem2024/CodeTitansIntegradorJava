@@ -3,6 +3,7 @@ package menu;
 import java.util.Scanner;
 import servicios.ClienteServicio;
 import servicios.OrdenamientoServicio;
+import utils.LectorDatosCliente;
 
 public class MenuOrdenar {
   private Scanner scanner;
@@ -27,8 +28,8 @@ public class MenuOrdenar {
       System.out.println("5. Por Saldo");
       System.out.println("6. Volver al Menú Principal");
       System.out.print("Ingrese una opción: ");
-      opcion = scanner.nextInt();
-      scanner.nextLine(); // Consumir el salto de línea
+      opcion = LectorDatosCliente.leerOpcion();
+      //scanner.nextLine(); // Consumir el salto de línea
 
       // Solo pedir el orden si la opción no es 6
       if (opcion != 6) {
@@ -68,10 +69,10 @@ public class MenuOrdenar {
   }
 
   private void ordenarClientes(String atributo, String orden) {
-    this.ordenamientoServicio.ordenarClientes(atributo, orden);
+    this.ordenamientoServicio.ordenarClientes(atributo, orden, clienteServicio);
     System.out.println("\nClientes ordenados por " + atributo + " en orden " + orden + ":");
     this.clienteServicio.listarClientes();
-    this.esperarEnter();
+    LectorDatosCliente.esperarEnter();
   }
 
   private void esperarEnter() {

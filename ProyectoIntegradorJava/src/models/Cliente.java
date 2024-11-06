@@ -116,7 +116,7 @@ public class Cliente {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-
+    /*
     // Método toString()
     @Override
     public String toString() {
@@ -134,5 +134,21 @@ public class Cliente {
                 ", fechaNacimiento='" + fechaNacimiento + '\'' +
                 '}';
     }
-
+    */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Cliente(DNI: ").append(dni);
+        sb.append(", Nombre: '").append(nombre);
+        sb.append("', Apellido: '").append(apellido);
+        sb.append("', Email: '").append(email);
+        sb.append("', Telefono: ").append(telefono);
+        sb.append(", Codigo Postal: ").append(codigoPostal);
+        sb.append(", Provincia: '").append(provincia);
+        sb.append("', Saldo: ").append(saldo);
+        sb.append(", Activo: '").append(activo);
+        sb.append("', Fecha de Nacimiento: ").append(fechaNacimiento);
+        sb.append(")");
+        return sb.toString();
+        }
 }

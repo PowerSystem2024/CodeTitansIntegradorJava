@@ -3,6 +3,7 @@ package menu;
 import models.Cliente;
 import servicios.BaseDeDatos;
 import servicios.ClienteServicio;
+import utils.LectorDatosCliente;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -28,7 +29,6 @@ public class MenuEliminar {
         if (listaClientes.isEmpty()) {
             System.out.println("No hay registros a eliminar. ¿Desea agregar un nuevo cliente? (si/no): ");
             String respuesta = entrada.nextLine();
-
 
             // Validación de la respuesta del usuario
             if (respuesta.equalsIgnoreCase("si")) {
