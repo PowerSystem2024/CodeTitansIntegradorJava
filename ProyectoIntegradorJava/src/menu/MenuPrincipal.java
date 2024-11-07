@@ -21,41 +21,41 @@ public class MenuPrincipal {
 
         do {
             System.out.println("\n--- Menú Principal ---");
-            System.out.println("1. Consultar Clientes");
-            System.out.println("2. Ordenar Clientes");
-            System.out.println("3. Eliminar Cliente");
-            System.out.println("4. Ingresar Cliente");
-            System.out.println("5. Modificar Cliente");
+            System.out.println("1. Ingresar Cliente");
+            System.out.println("2. Consultar Clientes");
+            System.out.println("3. Ordenar Cliente");
+            System.out.println("4. Modificar Cliente");
+            System.out.println("5. Eliminar Cliente");
             System.out.println("6. Salir");
             System.out.print("Ingrese una opción: ");
 
             opcion = LectorDatosCliente.leerOpcion();
 
             switch (opcion) {
-                // case 1:
-                // Llamar al menú de consultar clientes
-                // MenuConsultar menuConsultar = new MenuConsultar(clienteServicio);
-                // menuConsultar.mostrarMenu();
-                // break;
-                case 2:
-                    // Llamar al menú de ordenar clientes
-                    MenuOrdenar menuOrdenar = new MenuOrdenar(clienteServicio);
-                    menuOrdenar.mostrarMenu();
-                    break;
-                case 3:
-                    // Llamar al menú de eliminar cliente
-                    MenuEliminar menuEliminar = new MenuEliminar(clienteServicio);
-                    menuEliminar.eliminarCliente();
-                    break;
-                case 4:
+                case 1:
                     // Llamar al menú de ingresar cliente
                     MenuIngresar menuIngresar = new MenuIngresar(clienteServicio);
                     menuIngresar.mostrarMenu();
                     break;
-                case 5:
+                case 2:
+                // Llamar al menú de consultar clientes
+                    MenuConsultar menuConsultar = new MenuConsultar(clienteServicio);
+                    menuConsultar.mostrarMenu();
+                    break;
+                case 3:
+                    // Llamar al menú de ordenar clientes
+                    MenuOrdenar menuOrdenar = new MenuOrdenar(clienteServicio);
+                    menuOrdenar.mostrarMenu();
+                    break;
+                case 4:
                     // Llamar al menú de modificar cliente
                     MenuModificar menuModificar = new MenuModificar(clienteServicio);
                     menuModificar.mostrarMenu();
+                    break;
+                case 5:
+                    // Llamar al menú de eliminar cliente
+                    MenuEliminar menuEliminar = new MenuEliminar(clienteServicio);
+                    menuEliminar.eliminarCliente();
                     break;
                 case 6:
                     System.out.println("Saliendo del programa...");
