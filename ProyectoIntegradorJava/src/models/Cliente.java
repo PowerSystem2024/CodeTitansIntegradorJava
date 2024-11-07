@@ -116,25 +116,7 @@ public class Cliente {
     public void setActivo(boolean activo) {
         this.activo = activo;
     }
-    /*
-    // Método toString()
-    @Override
-    public String toString() {
-        return "Cliente{" +
-                "dni=" + dni +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", email='" + email + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", codigoPostal='" + codigoPostal + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", saldo=" + saldo +
-                ", activo=" + activo +
-                ", fechaNacimiento='" + fechaNacimiento + '\'' +
-                '}';
-    }
-    */
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -150,5 +132,5 @@ public class Cliente {
         sb.append("', Fecha de Nacimiento: ").append(fechaNacimiento);
         sb.append(")");
         return sb.toString();
-        }
+    }
 }
