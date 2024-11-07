@@ -1,23 +1,16 @@
 package menu;
 
 import servicios.BaseDeDatos; // Importa la clase BaseDeDatos para acceder a la base de datos
-import java.util.Scanner; // Importa la clase Scanner para leer datos del usuario
 import servicios.ClienteServicio; // Importa la clase ClienteServicio para realizar operaciones con clientes
+import utils.LectorDatosCliente;
 
 // Clase que contiene el menú principal del programa.
 
 public class MenuPrincipal {
 
-    private BaseDeDatos baseDeDatos; // Instancia de la base de datos
-    private Scanner scanner; // Instancia de la clase Scanner para leer datos del usuario
     private ClienteServicio clienteServicio; // llamamos a la clase ClienteServicio
-    // Constructor de la clase MenuPrincipal.
-    // Inicializa la base de datos y el Scanner.
 
     public MenuPrincipal(BaseDeDatos baseDeDatos) { // Constructor de la clase MenuPrincipal
-        this.baseDeDatos = baseDeDatos; // Inicializa la base de datos
-        baseDeDatos = new BaseDeDatos(); // Inicializa la base de datos
-        scanner = new Scanner(System.in); // Inicializa el Scanner
         clienteServicio = new ClienteServicio(); // Inicializa el servicio de clientes
     }
 
@@ -36,8 +29,7 @@ public class MenuPrincipal {
             System.out.println("6. Salir");
             System.out.print("Ingrese una opción: ");
 
-            opcion = scanner.nextInt(); // Leer la opción seleccionada por el usuario
-            scanner.nextLine(); // Consumir el salto de línea
+            opcion = LectorDatosCliente.leerOpcion();
 
             switch (opcion) {
                 // case 1:
@@ -73,7 +65,6 @@ public class MenuPrincipal {
             }
         } while (opcion != 6);
 
-        scanner.close(); // Cerrar el Scanner
     }
 
 }

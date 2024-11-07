@@ -3,18 +3,17 @@ package menu;
 import models.Cliente;
 import servicios.BaseDeDatos;
 import servicios.ClienteServicio;
-import utils.LectorDatosCliente;
+//import utils.LectorDatosCliente;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuEliminar {
-    //Instanciamos
+    // Instanciamos
     private ClienteServicio clienteServicio;
     private ArrayList<Cliente> listaClientes;
     private Scanner entrada;
     private BaseDeDatos baseDeDatos;
-
 
     // Constructor que recibe el objeto IngresarClientes para acceder a los clientes
     public MenuEliminar(ClienteServicio clienteServicio) {
@@ -69,10 +68,10 @@ public class MenuEliminar {
             System.out.println("Regresando al menú principal...");
             return;
         }
-        // Si el usuario ingresa cualquier otra cosa se llama al metodo confirmarEliminar y se le pasa el argumento option
+        // Si el usuario ingresa cualquier otra cosa se llama al metodo
+        // confirmarEliminar y se le pasa el argumento option
         confirmacionEliminar(option);
     }
-
 
     public void confirmacionEliminar(String option) {
         try {

@@ -1,6 +1,5 @@
 package utils;
 
-import models.Cliente;
 import servicios.ClienteServicio;
 
 import java.util.Scanner;
@@ -193,7 +192,6 @@ public class LectorDatosCliente {
     public static int leerOpcion() { // Método para leer la opción del usuario
         return scanner.nextInt();
     }
-
 
     public static void esperarEnter() { // Método para esperar a que el usuario presione Enter para continuar
         System.out.println("\nPresione Enter para continuar...");

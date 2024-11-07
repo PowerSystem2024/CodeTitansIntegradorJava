@@ -29,7 +29,6 @@ public class MenuOrdenar {
       System.out.println("6. Volver al Menú Principal");
       System.out.print("Ingrese una opción: ");
       opcion = LectorDatosCliente.leerOpcion();
-      //scanner.nextLine(); // Consumir el salto de línea
 
       // Solo pedir el orden si la opción no es 6
       if (opcion != 6) {
@@ -73,10 +72,5 @@ public class MenuOrdenar {
     System.out.println("\nClientes ordenados por " + atributo + " en orden " + orden + ":");
     this.clienteServicio.listarClientes();
     LectorDatosCliente.esperarEnter();
-  }
-
-  private void esperarEnter() {
-    System.out.print("Presione Enter para continuar...");
-    this.scanner.nextLine();
   }
 }

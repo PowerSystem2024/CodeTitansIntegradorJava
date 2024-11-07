@@ -1,6 +1,7 @@
 package servicios;
 
 import models.Cliente;
+import servicios.ClienteServicio;
 import java.util.ArrayList; // Importa la clase ArrayList para poder usar listas
 import java.util.Collections; // Importa la clase Collections para poder ordenar listas
 import java.util.Comparator; // Importa la clase Comparator para poder comparar objetos
@@ -23,7 +24,8 @@ public class OrdenamientoServicio {
      * especificado.
      */
     public void ordenarClientes(String atributo, String orden, ClienteServicio clienteServicio) {
-        ArrayList<Cliente> listaClientes = clienteServicio.getLista();; // Obtiene la lista de clientes
+        ArrayList<Cliente> listaClientes = clienteServicio.getLista();
+        ; // Obtiene la lista de clientes
 
         Collections.sort(listaClientes, new Comparator<Cliente>() {
             @Override // Sobrescribe el método compare de la interfaz Comparator

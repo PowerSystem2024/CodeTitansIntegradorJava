@@ -1,7 +1,6 @@
 package utils;
 
 import models.Cliente;
-import servicios.BaseDeDatos;
 import servicios.ClienteServicio;
 
 import java.util.ArrayList; // Importa la clase ArrayList para trabajar con listas
@@ -25,7 +24,6 @@ public class Validaciones {
         }
         return false; // El documento no existe
     }
-
 
     // Verifica si un nombre es válido (solo letras)
     public static boolean nombreValido(String nombre) {
