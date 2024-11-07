@@ -13,14 +13,12 @@ public class MenuEliminar {
     private ClienteServicio clienteServicio;
     private ArrayList<Cliente> listaClientes;
     private Scanner entrada;
-    private BaseDeDatos baseDeDatos;
 
     // Constructor que recibe el objeto IngresarClientes para acceder a los clientes
     public MenuEliminar(ClienteServicio clienteServicio) {
         this.clienteServicio = clienteServicio;
         this.listaClientes = clienteServicio.getLista();
         this.entrada = new Scanner(System.in);
-        baseDeDatos = new BaseDeDatos();
     }
 
     public void eliminarCliente() {
