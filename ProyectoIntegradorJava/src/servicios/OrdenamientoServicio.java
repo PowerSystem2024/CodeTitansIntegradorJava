@@ -40,7 +40,7 @@ public class OrdenamientoServicio {
                         resultado = Boolean.compare(cliente2.isActivo(), cliente1.isActivo()); // Invierte el orden para
                                                                                                // activo/inactivo
                         break;
-                    case "documento":
+                    case "dni":
                         resultado = Integer.compare(cliente1.getDni(), cliente2.getDni());
                         break;
                     case "nombre":

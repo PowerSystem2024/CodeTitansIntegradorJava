@@ -1,7 +1,6 @@
 package menu;
 
 import models.Cliente;
-import servicios.BaseDeDatos;
 import servicios.ClienteServicio;
 //import utils.LectorDatosCliente;
 
@@ -9,12 +8,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuEliminar {
-    // Instanciamos
+
     private ClienteServicio clienteServicio;
     private ArrayList<Cliente> listaClientes;
     private Scanner entrada;
 
-    // Constructor que recibe el objeto IngresarClientes para acceder a los clientes
     public MenuEliminar(ClienteServicio clienteServicio) {
         this.clienteServicio = clienteServicio;
         this.listaClientes = clienteServicio.getLista();
