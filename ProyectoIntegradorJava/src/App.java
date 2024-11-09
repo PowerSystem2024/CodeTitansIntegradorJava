@@ -8,7 +8,7 @@ import menu.MenuPrincipal; // Importa la clase MenuPrincipal
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        System.out.println("Base de Datos - Clientes");
 
         // Crear una instancia de la base de datos
         BaseDeDatos baseDeDatos = new BaseDeDatos(); // Instancia de la base de datos
