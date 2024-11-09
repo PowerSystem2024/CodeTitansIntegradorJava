@@ -1,16 +1,12 @@
 package menu;
 
-import java.util.Scanner; //importamos la clase Scanner
-
+import utils.LectorDatosCliente;
 import models.Cliente;
-//import servicios.BaseDeDatos; //importamos la clase BaseDeDatos
 import servicios.ClienteServicio; //importamos la clase ClienteServicio
 
 //clase MenuConsultar
 public class MenuConsultar {
 
-    // private BaseDeDatos baseDeDatos; // llamamos a la clase BaseDeDatos
-    private Scanner scanner; // llamamos a la clase Scanner
     private ClienteServicio clienteServicio; // llamamos a la clase ClienteServicio
 
     /**
@@ -19,10 +15,7 @@ public class MenuConsultar {
      * @param baseDeDatos La base de datos de clientes.
      */
     public MenuConsultar(ClienteServicio clienteServicio) {
-        // this.baseDeDatos = baseDeDatos;
         this.clienteServicio = clienteServicio;
-        scanner = new Scanner(System.in);
-
     }
 
     // Muestra el menu de consulta y gestiona las opciones del usuario
@@ -35,9 +28,7 @@ public class MenuConsultar {
             System.out.println("3. Volver al Menú Principal");
             System.out.print("Ingrese una opción: ");
 
-            opcion = scanner.nextInt(); // Leer la opción ingresada por el usuario
-            scanner.nextLine(); // Consumir el salto de línea
-
+            opcion = LectorDatosCliente.leerOpcion();
             switch (opcion) {
                 case 1:
                     consultarPorDocumento();
@@ -57,8 +48,7 @@ public class MenuConsultar {
     // Consulta un cliente por documento
     private void consultarPorDocumento() {
         System.out.print("Ingrese el documento del cliente: ");
-        int dni = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
+        int dni = LectorDatosCliente.leerDocumento(clienteServicio);
 
         Cliente cliente = clienteServicio.buscarCliente(dni);
 
@@ -69,18 +59,12 @@ public class MenuConsultar {
             System.out.println("\nNo se encontró ningún cliente con ese documento.");
         }
 
-        esperarEnter();
+        LectorDatosCliente.esperarEnter();
     }
 
     // Lista todos los clientes de la base de datos
     private void listarTodosLosClientes() {
         clienteServicio.listarClientes();
-        esperarEnter();
-    }
-
-    // Espera a que el usuario presione Enter
-    private void esperarEnter() {
-        System.out.println("\nPresione Enter para continuar...");
-        scanner.nextLine();
+        LectorDatosCliente.esperarEnter();
     }
 }
